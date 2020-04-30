@@ -21,10 +21,16 @@
     @extend %card;
     position: relative;
     width: 100%;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 10px 20px rgba(50, 50, 50, 0.4);
     color: #ffffff;
     background-position: center;
     background-size: cover;
+
+    &.-lg {
+        .card__body {
+            padding: $space-3;
+        }
+    } 
     
     &::before {
         content: '';

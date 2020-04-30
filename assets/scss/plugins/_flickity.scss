@@ -110,7 +110,7 @@ https://flickity.metafizzy.co
 /* ---- page dots ---- */
 
 .flickity-page-dots {
-  display: none;
+  opacity: 0;
   position: absolute;
   width: 100%;
   bottom: -25px;
@@ -142,11 +142,11 @@ https://flickity.metafizzy.co
   width: 70%;
   padding: 20px 20px 30px;
   height: 500px;
-  overflow-y: auto;
+  margin-left: 0;
   transition: transform .3s ease-in-out;
 
   &:not(.is-selected) {
-    transform: scaleY(.85);
+    transform: scale(.95);
   }
 
   &__card {

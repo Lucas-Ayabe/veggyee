@@ -7,6 +7,8 @@ $primary-dark: #009ad1;
 $primary-darker: #008dc4;
 $primary-darkest: #007bb2;
 
+$secondary: #04a00e;
+
 $success: #14d622;
 $danger: #ff3920;
 $warning: #ffff26;
@@ -28,6 +30,7 @@ $gradient-3: linear-gradient(#ec038b, #fb6468, #fbb936);
 
 $colors: (
     'primary': $primary,
+    'secondary': $secondary,
     'success': $success,
     'danger': $danger,
     'warning': $warning,

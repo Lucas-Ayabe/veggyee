@@ -46,7 +46,7 @@
                 <div class="tab__item">
 
                     <div class="main-gallery js-flickity"
-                        data-flickity-options='{ "freeScroll": true, "wrapAround": true }'>
+                        data-flickity-options='{ "wrapAround": true, "dragabble": true }'>
                         <div class="gallery-cell">
                             <div class="gallery-cell__card card"
                                 style="background-image: url('./assets/images/product-01.jpg');">
@@ -87,11 +87,56 @@
                     <header class="section__header">
                         <h2>Popular</h2>
 
-                        .
+                        <button class="meatball">
+                            <span class="meatball__ball"></span>
+                            <span class="meatball__ball"></span>
+                            <span class="meatball__ball"></span>
+                        </button>
                     </header>
+
+                    <div class="columns">
+                        <div class="column column--md-3">
+                            <a class="card -lg u-text-center"
+                                style="background-image: url('./assets/images/product-01.jpg');">
+                                <div class="card__body">
+                                    <h2 class="title">Soups</h2>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="column column--md-3">
+                            <a class="card -lg u-text-center"
+                                style="background-image: url('./assets/images/product-01.jpg');">
+                                <div class="card__body">
+                                    <h2 class="title">Soups</h2>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="column column--md-3">
+                            <a class="card -lg u-text-center"
+                                style="background-image: url('./assets/images/product-01.jpg');">
+                                <div class="card__body">
+                                    <h2 class="title">Soups</h2>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="column column--md-3">
+                            <a class="card -lg u-text-center"
+                                style="background-image: url('./assets/images/product-01.jpg');">
+                                <div class="card__body">
+                                    <h2 class="title">Soups</h2>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </section>
         </article>
+
+        <footer class="section -secondary u-text-center">
+            <div class="container">
+                <p>Site de treino criado por Lucas Akira Ayabe, baseado no layout de @mat.andreotti.</p>
+            </div>
+        </footer>
     </main>
 
     <script src="./assets/js/flickity.pkgd.min.js"></script>

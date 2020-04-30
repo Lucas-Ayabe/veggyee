@@ -1,0 +1,16 @@
+$ball-radius: 6px;
+.meatball {
+    border: none;
+    background: transparent;
+    padding: 0;
+    vertical-align: middle;
+
+    &__ball {
+        display: inline-block;
+        width: $ball-radius;
+        height: $ball-radius;
+        background: #000;
+        border-radius: $circle;
+        vertical-align: middle;
+    }
+}
