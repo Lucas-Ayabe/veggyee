@@ -143,6 +143,11 @@ https://flickity.metafizzy.co
   padding: 20px 20px 30px;
   height: 500px;
   overflow-y: auto;
+  transition: transform .3s ease-in-out;
+
+  &:not(.is-selected) {
+    transform: scaleY(.85);
+  }
 
   &__card {
     height: 100%;
