@@ -8,8 +8,12 @@
         border: 1px solid #eee;
         max-width: 100%;
         width: 100%;
-        font-size: 1rem;
+        font-size: $font-2;
         padding: 5px 10px;
+
+        @include min-width(getBreakpoint('md')) {
+            font-size: $font-3;
+        }
     }
 
     &__button {

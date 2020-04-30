@@ -33,9 +33,9 @@
     &__burger {
         flex: 0 0 auto;
         z-index: 2;
-        @include min-width(getBreakpoint('md')) {
-            display: none;
-        } 
+        // @include min-width(getBreakpoint('md')) {
+        //     display: none;
+        // } 
     }
 
     &__search {

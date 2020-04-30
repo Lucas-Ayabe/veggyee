@@ -145,11 +145,28 @@ https://flickity.metafizzy.co
   margin-left: 0;
   transition: transform .3s ease-in-out;
 
+  @include min-width(getBreakpoint('sm')) {
+    width: 60%;
+  }
+
   &:not(.is-selected) {
     transform: scale(.95);
   }
 
   &__card {
     height: 100%;
+
+    @include min-width(getBreakpoint('sm')) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: $space-3;
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
   }
 }

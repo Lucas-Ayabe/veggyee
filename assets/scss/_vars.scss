@@ -68,7 +68,7 @@ $family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ub
 $font-1: .707rem;
 $font-base: 16px;
 $font-2: 1.125rem;
-$font-3: 1.999rem;
+$font-3: 1.5rem;
 $font-4: 2.827rem;
 $font-5: 3.998rem;
 $font-6: 5.653rem;
@@ -125,8 +125,8 @@ $container-sizes: (
     xsm: 460px,
     sm: 540px,
     md: 720px,
-    lg: 928px,
-    xlg: 1140px
+    lg: 800px,
+    xlg: 960px
 );
 
 // Radius

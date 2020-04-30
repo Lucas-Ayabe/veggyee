@@ -158,12 +158,33 @@ https://flickity.metafizzy.co
   transition: transform 0.3s ease-in-out;
 }
 
+@media screen and (min-width: 568px) {
+  .gallery-cell {
+    width: 60%;
+  }
+}
+
 .gallery-cell:not(.is-selected) {
   transform: scale(0.95);
 }
 
 .gallery-cell__card {
   height: 100%;
+}
+
+@media screen and (min-width: 568px) {
+  .gallery-cell__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+  }
+
+  .gallery-cell__card p {
+    font-size: 1.5rem;
+  }
 }
 
 * {
@@ -222,13 +243,13 @@ option {
 
 @media screen and (min-width: 960px) {
   .container {
-    max-width: 928px;
+    max-width: 800px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .container {
-    max-width: 1140px;
+    max-width: 960px;
   }
 }
 
@@ -1085,12 +1106,6 @@ option {
   z-index: 2;
 }
 
-@media screen and (min-width: 768px) {
-  .header__burger {
-    display: none;
-  }
-}
-
 .header__search {
   flex: 1 1 calc(100% - 35px);
   max-width: calc(100% - 35px);
@@ -1125,27 +1140,8 @@ option {
   opacity: 1;
 }
 
-@media screen and (min-width: 768px) {
-  .nav {
-    position: static;
-    pointer-events: all;
-    opacity: 1;
-    z-index: 2;
-    height: auto;
-    width: auto;
-    flex-direction: row;
-    background: transparent;
-  }
-}
-
 .nav.-left {
   padding-left: 2rem;
-}
-
-@media screen and (min-width: 768px) {
-  .nav.-left {
-    justify-content: flex-start;
-  }
 }
 
 .nav.-center {
@@ -1163,21 +1159,8 @@ option {
   flex-direction: column;
 }
 
-@media screen and (min-width: 768px) {
-  .nav__menu {
-    flex-direction: row;
-  }
-}
-
 .nav__item + .nav__item {
   margin-top: 2.125rem;
-}
-
-@media screen and (min-width: 768px) {
-  .nav__item + .nav__item {
-    margin-top: 0;
-    margin-left: 2.125rem;
-  }
 }
 
 .nav__link {
@@ -1246,10 +1229,11 @@ option {
 .title {
   font-size: 2.827rem;
   font-weight: 500;
+  text-decoration: none;
 }
 
 .title--small {
-  font-size: 1.999rem;
+  font-size: 1.5rem;
 }
 
 .title--large {
@@ -1848,6 +1832,7 @@ option {
   color: #ffffff;
   background-position: center;
   background-size: cover;
+  text-decoration: none;
 }
 
 .card.-lg .card__body {
@@ -1861,7 +1846,7 @@ option {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.65);
   border-radius: 20px;
   z-index: 1;
 }
@@ -1938,7 +1923,7 @@ option {
 }
 
 .card__title {
-  font-size: 1.999rem;
+  font-size: 1.5rem;
   font-weight: 500;
 }
 
@@ -2058,8 +2043,14 @@ option {
   border: 1px solid #eee;
   max-width: 100%;
   width: 100%;
-  font-size: 1rem;
+  font-size: 1.125rem;
   padding: 5px 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .search__input {
+    font-size: 1.5rem;
+  }
 }
 
 .search__button {
@@ -2106,6 +2097,7 @@ option {
   border: none;
   background: transparent;
   font-size: 1.125rem;
+  cursor: pointer;
 }
 
 .tabs__tab::after {
@@ -2309,7 +2301,7 @@ option {
 }
 
 .u-font-3 {
-  font-size: 1.999rem;
+  font-size: 1.5rem;
 }
 
 .u-font-4 {

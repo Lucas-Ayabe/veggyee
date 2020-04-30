@@ -12,6 +12,7 @@
         border: none;
         background: transparent;
         font-size: $font-2;
+        cursor: pointer;
 
         &::after {
             content: "";
