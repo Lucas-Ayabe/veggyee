@@ -1,0 +1,49 @@
+.header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    position: relative;
+    z-index: 999;
+    transition: all .3s ease-in-out;
+
+    &.is-active {
+        background: #fff;
+        box-shadow: $shadow-3;
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        font-weight: bold;
+        white-space: nowrap;
+        flex: 1;
+        z-index: 2;
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+    }
+
+    &__burger {
+        flex: 0 0 auto;
+        z-index: 2;
+        @include min-width(getBreakpoint('md')) {
+            display: none;
+        } 
+    }
+
+    &__search {
+        flex: 1 1 calc(100% - 35px);
+        max-width: calc(100% - 35px);
+    }
+
+    &__nav {
+        flex: 5;
+    }
+}

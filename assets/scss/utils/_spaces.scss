@@ -1,0 +1,19 @@
+// 
+// .u-p-number    sets a padding based in the $space-x variables.
+// .u-pl-number   sets a padding-left based in the $space-x variables.
+// .u-pr-number   sets a padding-right based in the $space-x variables.
+// .u-pt-number   sets a padding-top based in the $space-x variables.
+// .u-pb-number   sets a padding-bottom based in the $space-x variables.
+// .u-m-number    sets a margin based in the $space-x variables.
+// .u-ml-number   sets a margin-left based in the $space-x variables.
+// .u-mr-number   sets a margin-right based in the $space-x variables.
+// .u-mt-number   sets a margin-top based in the $space-x variables.
+// .u-mb-number   sets a margin-bottom based in the $space-x variables.
+// 
+.u {    
+    @include generateSpaces();
+
+    @each $breakpointName, $breakpoint in $breakpoints {
+        @include generateSpaces($breakpointName);
+    }
+}

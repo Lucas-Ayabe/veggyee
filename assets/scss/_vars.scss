@@ -1,0 +1,155 @@
+// Colors
+$primary-lightest: #aee0ef;
+$primary-lighter: #7acbe5;
+$primary-light: #46b7db;
+$primary: #14d622;
+$primary-dark: #009ad1;
+$primary-darker: #008dc4;
+$primary-darkest: #007bb2;
+
+$success: #14d622;
+$danger: #ff3920;
+$warning: #ffff26;
+$info: #00e2b2;
+
+$dark: #021115;
+$darker: #010a0d;
+$darkest: #010708;
+$black: #000;
+
+$light: #f3f6f3;
+$lighter: #f3f9fc;
+$lightest: #f7fcfc;
+$white: #fff;
+
+$gradient-1: linear-gradient(130deg, #13ffff, #3ba3ff, #9c00ff);
+$gradient-2: linear-gradient(130deg, #006fff, #00e5e5, #0bff96);
+$gradient-3: linear-gradient(#ec038b, #fb6468, #fbb936);
+
+$colors: (
+    'primary': $primary,
+    'success': $success,
+    'danger': $danger,
+    'warning': $warning,
+    'info': $info,
+    'dark': $dark,
+    'light': $light,
+    'black': $black,
+    'white': $white
+);
+
+$color-shades: (
+    'primary-light': $primary-light,
+    'primary-lighter': $primary-lighter,
+    'primary-lightest': $primary-lightest,
+    'primary-dark': $primary-dark,
+    'primary-darker': $primary-darker,
+    'primary-darkest': $primary-darkest,
+    'lighter': $lighter,
+    'lightest': $lightest,
+    'darker': $darker,
+    'darkest': $darkest
+);
+
+$full-colors: map-merge($map1: $colors, $map2: $color-shades);
+
+$gradients: (
+    'gradient-1': $gradient-1,
+    'gradient-2': $gradient-2,
+    'gradient-3': $gradient-3
+);
+
+// Typography
+$family: Lato, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+$font-1: .707rem;
+$font-base: 16px;
+$font-2: 1.125rem;
+$font-3: 1.999rem;
+$font-4: 2.827rem;
+$font-5: 3.998rem;
+$font-6: 5.653rem;
+
+$font-sizes: (
+    'font-base': $font-base,
+    'font-1': $font-1,
+    'font-2': $font-2,
+    'font-3': $font-3,
+    'font-4': $font-4,
+    'font-5': $font-5,
+    'font-6': $font-6,
+);
+
+// Space
+$space-0: 0;
+$space-1: 10px;
+$space-2: 20px;
+$space-3: 30px;
+$space-4: 60px;
+$space-5: 80px;
+$space-6: 120px;
+$gap: 20px;
+
+$spaces: (
+    '0': 0,
+    '1': $space-1,
+    '2': $space-2,
+    '3': $space-3,
+    '4': $space-4,
+    '5': $space-5,
+    '6': $space-6,
+    'gap': $gap,
+);
+
+// Grid
+$columns: 12;
+
+$breakpoint-xsm: 480px;
+$breakpoint-sm: 568px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 960px;
+$breakpoint-xlg: 1200px;
+
+$breakpoints: (
+    'xsm': $breakpoint-xsm,
+    'sm': $breakpoint-sm,
+    'md': $breakpoint-md,
+    'lg': $breakpoint-lg,
+    'xlg': $breakpoint-xlg,
+);
+
+$container-sizes: (
+    xsm: 460px,
+    sm: 540px,
+    md: 720px,
+    lg: 928px,
+    xlg: 1140px
+);
+
+// Radius
+$radius-1: 3px;
+$radius-2: 4px;
+$radius-3: 10px;
+$radius-4: 25px;
+$circle: 50%;
+
+$radius: (
+    '1': $radius-1,
+    '2': $radius-2,
+    '3': $radius-3,
+    '4': $radius-4,
+    'circle': $circle,
+);
+
+// Shadows
+$shadow-1: 0 3px 6px rgba(10, 10, 10, .15);
+$shadow-2: 0 4px 8px rgba(10, 10, 10, .15), 0 5px 10px rgba(20, 20, 20, .05);
+$shadow-3: 0 8px 16px getRgba(#8a959e, .2);
+$shadow-4: 0 20px 40px getRgba(#8a959e, .8);
+
+$shadows: (
+    'shadow-1': $shadow-1,
+    'shadow-2': $shadow-2,
+    'shadow-3': $shadow-3,
+    'shadow-4': $shadow-4,
+);

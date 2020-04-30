@@ -1,0 +1,119 @@
+//
+// .section         is a container that gives a vertical space to a content.
+// .section--color  depending on the color the section changes the text color.
+// .section--size   modifies the .container class to a bigger or a smaller vertical size.
+// .section--hero   the section occupes 100% of the screen height.
+//
+
+%section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: $space-4;
+    padding-bottom: $space-4;
+}
+
+%hero {
+    min-height: 100vh;
+}
+
+@mixin sectionColors {
+    @each $name, $color in $colors {
+        &.-#{$name} {
+            @extend %-#{$name};
+        }
+    }
+}
+
+@each $name, $color in $colors {
+    %-#{$name} {
+        background: $color;
+        color: getContrastYIQ($color);
+    }
+}
+
+.section {
+    @extend %section;
+    @include sectionColors();
+    
+
+    &--small {
+        @extend %section;
+        padding-top: $space-3;
+        padding-bottom: $space-3;
+
+        @include sectionColors();
+    }
+
+    &--large {
+        @extend %section;
+        padding-top: $space-5;
+        padding-bottom: $space-5;
+        
+        @include sectionColors();
+    }
+
+    &--larger {
+        @extend %section;
+        padding-top: $space-6;
+        padding-bottom: $space-6;
+
+        @include sectionColors();
+    }
+
+    &--half {
+        @extend %section;
+        min-height: 50vh;
+
+        @include sectionColors();
+    }
+
+    &--hero {
+        @extend %section;
+        @extend %hero;
+        @include sectionColors();
+    }
+
+    &.-half-dark {
+        background: $dark;
+        color: $white;
+
+        .button.-dark {
+            background: $light;
+            color: $black;
+
+            &:hover {
+                background: $lighter;
+            }
+
+            &:active {
+                background: $lightest;
+            }
+        }
+
+        @include min-width(getBreakpoint('md')) {
+            color: $black;
+            background-image: linear-gradient(to right, #fff 65%, #021115 35%);
+        
+            .button.-dark {
+                background: $dark;
+                color: $light;
+    
+                &:hover {
+                    background: $darker;
+                }
+    
+                &:active {
+                    background: $darkest;
+                }
+            }
+        }
+    }
+
+    &.-half-light {
+        @include min-width(getBreakpoint('md')) {
+            background-image: linear-gradient(to left, #fff 65%, #021115 35%);
+        }    
+    }
+}

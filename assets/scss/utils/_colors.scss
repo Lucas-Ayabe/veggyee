@@ -1,0 +1,22 @@
+// 
+// .u-bg-color    sets a background-color based in the $full-color variable.
+// .u-text-color  sets a color based in the $full-color variable.
+// .u-gradient-x  sets a background-image based in the $gradients variable.
+// 
+.u {
+    @each $name, $color in $full-colors {
+        &-bg-#{$name} {
+            background-color: $color;
+        }
+
+        &-text-#{$name} {
+            color: $color;
+        }
+    }
+
+    @each $name, $color in $gradients {
+        &-#{$name} {
+            background-image: $color;
+        }
+    }
+}

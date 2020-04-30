@@ -1,0 +1,27 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: $space-4 $space-3;
+    box-shadow: $shadow-4;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include min-width(getBreakpoint('sm')) {
+        padding: $space-4;
+    }
+
+
+    &.-dark {
+        background: $dark;
+        color: $white;
+    }
+
+    .button {
+        @media screen and (max-width: 320px) {
+            font-size: $font-base;
+        }
+    }
+}

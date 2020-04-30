@@ -1,0 +1,16 @@
+// Is a wrapper element that center a content and defines a max width to the content.
+// The .container max width auto adjusts to the screen size.
+.container {
+    display: block;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $gap;
+    padding-left: $gap;
+
+    @each $breakpoint, $breakpointValue in $breakpoints {
+        @include min-width($breakpointValue) {
+            max-width: map-get($map: $container-sizes, $key: $breakpoint);
+        }
+    }
+}

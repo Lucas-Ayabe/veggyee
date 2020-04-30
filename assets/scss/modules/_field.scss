@@ -1,0 +1,20 @@
+.field {
+    margin-bottom: 1.5rem;
+    width: 100%;
+    
+    &__label,
+    &__input {
+        display: block;
+        font-size: $font-2;
+        text-align: left;
+    }
+
+    &__label {
+        margin-bottom: 1rem;
+    }
+
+    &__input {
+        width: 100%;
+        padding: .5rem;
+    }
+}

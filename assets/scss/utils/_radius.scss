@@ -1,0 +1,10 @@
+// 
+// Sets the border-radius of an element based in the $radius variable.
+// 
+.u {
+    @each $name, $rounded in $radius {
+        &-rounded-#{$name} {
+            border-radius: $rounded;
+        }
+    }
+}

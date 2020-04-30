@@ -1,0 +1,114 @@
+//
+// .banner                  is a class that fits the background-image
+//                          to cover the screen and align in the center.
+// .banner--hero            the .banner occupes the 100% of the screen height.
+// .banner__content         is the class that sets the content in the banner in the top.
+// .banner__overlay         is the class to creates an overlay in the .banner.
+// .banner__overlay--dark   is the class to creates an dark overlay in the .banner.
+// .banner__overlay--light  is the class to creates an light overlay in the .banner.
+// .banner--overlay         is the class to creates an overlay in the .banner.
+// .banner--overlay-dark    is the class to creates an dark overlay in the .banner.
+// .banner--overlay-light   is the class to creates an light overlay in the .banner.
+//
+.banner {
+    @extend %section;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 65vh;
+    position: relative;
+
+    &--hero {
+        min-height: 100vh;
+        line-height: 1.2;
+    }
+
+    &--horizontal {
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, .5);
+            z-index: 2;
+        }
+
+        .banner__image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
+
+        @include min-width(getBreakpoint('md')) {
+            .banner__image {
+                top: 0;
+                right: 0;
+
+                &--halfvw {
+                    width: 45vw;
+                    height: 100vh;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    &__content {
+        position: relative;
+        z-index: 2;
+    }
+
+    &__title {
+        position: relative;
+        z-index: 1;
+        font-size: 48px;
+
+        @include min-width(600px) {
+            font-size: 4rem;
+        }
+    }
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+
+        &--dark {
+            background: rgba(0, 0, 0, 0.6);
+        }
+        &--light {
+            background: rgba(255, 255, 255, 0.5);
+        }
+    }
+
+    &--parallax {
+        background-attachment: fixed;
+    }
+
+    &--overlay {
+        &::before {
+            content: "";
+            @extend .banner__overlay;
+        }
+
+        &-dark {
+            &::before {
+                @extend .banner__overlay--dark;
+            }
+        }
+
+        &-light {
+            &::before {
+                @extend .banner__overlay--light;
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+//
+// .title                                         is a class that turns the text bigger and bold.
+// .title--small, .title--large, .title--larger   changes the font size of the .title.
+//
+.title {
+    font-size: $font-4;
+    font-weight: 500;
+    
+    &--small {
+        font-size: $font-3;
+    }
+
+    &--large {
+        font-size: $font-5;
+    }
+
+    &--larger {
+        font-size: $font-6;
+    }
+}

@@ -1,0 +1,30 @@
+// Resets all margins, paddings and box-sizings.
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+// Sets a default font-family and font-size to a html and body.
+html, 
+body {
+    font-family: $family;
+    font-size: $font-base;
+    scroll-behavior: smooth;
+}
+
+// Sets a margin to all p elements
+p {
+    margin-bottom: 1rem;
+}
+
+// Sets a default font-size to text-like elements.
+p, 
+a, 
+button, 
+input, 
+textarea,
+select,
+option {
+    font-size: $font-2;
+}

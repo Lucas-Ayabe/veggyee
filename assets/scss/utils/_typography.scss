@@ -1,0 +1,25 @@
+// 
+// .u-font-number   sets a font-size based in the $font-x variables.
+// .u-text-left     aligns the text in left
+// .u-text-center   aligns the text in center
+// .u-text-right    aligns the text in right
+// 
+.u {
+    @each $name, $size in $font-sizes {
+        &-#{$name} {
+            font-size: $size;
+        }
+    }
+
+    &-text-left {
+        text-align: left;
+    }
+
+    &-text-center {
+        text-align: center;
+    }
+
+    &-text-right {
+        text-align: right;
+    }
+}

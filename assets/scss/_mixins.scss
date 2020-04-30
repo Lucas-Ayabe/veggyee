@@ -1,0 +1,277 @@
+@mixin min-width($breakpoint) {
+    @media screen and (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin generateSpaces($breakpoint: false) {
+    @if $breakpoint != false {
+        @include min-width(getBreakpoint($breakpoint)) {
+            @each $spaceNumber, $space in $spaces {
+                &-p-#{$breakpoint}-#{$spaceNumber} {
+                    padding: $space;
+                }
+                &-px-#{$breakpoint}-#{$spaceNumber} {
+                    padding-left: $space;
+                    padding-right: $space;
+                }
+                &-py-#{$breakpoint}-#{$spaceNumber} {
+                    padding-top: $space;
+                    padding-bottom: $space;
+                }
+                &-pl-#{$breakpoint}-#{$spaceNumber} {
+                    padding-left: $space;
+                }
+                &-pr-#{$breakpoint}-#{$spaceNumber} {
+                    padding-right: $space;
+                }
+                &-pt-#{$breakpoint}-#{$spaceNumber} {
+                    padding-top: $space;
+                }
+                &-pb-#{$breakpoint}-#{$spaceNumber} {
+                    padding-bottom: $space;
+                }
+                &-m-#{$breakpoint}-#{$spaceNumber} {
+                    margin: $space;
+                }
+                &-mx-#{$breakpoint}-#{$spaceNumber} {
+                    margin-left: $space;
+                    margin-right: $space;
+                }
+                &-my-#{$breakpoint}-#{$spaceNumber} {
+                    margin-top: $space;
+                    margin-bottom: $space;
+                }
+                &-ml-#{$breakpoint}-#{$spaceNumber} {
+                    margin-left: $space;
+                }
+                &-mr-#{$breakpoint}-#{$spaceNumber} {
+                    margin-right: $space;
+                }
+                &-mt-#{$breakpoint}-#{$spaceNumber} {
+                    margin-top: $space;
+                }
+                &-mb-#{$breakpoint}-#{$spaceNumber} {
+                    margin-bottom: $space;
+                }
+            }
+        }
+
+        &-m-#{$breakpoint}-auto {
+            margin: auto;
+        }
+        &-mx-#{$breakpoint}-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        &-my-#{$breakpoint}-auto {
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+        &-ml-#{$breakpoint}-auto {
+            margin-left: auto;
+        }
+        &-mr-#{$breakpoint}-auto {
+            margin-right: auto;
+        }
+        &-mt-#{$breakpoint}-auto {
+            margin-top: auto;
+        }
+        &-mb-#{$breakpoint}-auto {
+            margin-bottom: auto;
+        }
+    } @else {
+        @each $spaceNumber, $space in $spaces {
+            &-p-#{$spaceNumber} {
+                padding: $space;
+            }
+            &-px-#{$spaceNumber} {
+                padding-left: $space;
+                padding-right: $space;
+            }
+            &-py-#{$spaceNumber} {
+                padding-top: $space;
+                padding-bottom: $space;
+            }
+            &-pl-#{$spaceNumber} {
+                padding-left: $space;
+            }
+            &-pr-#{$spaceNumber} {
+                padding-right: $space;
+            }
+            &-pt-#{$spaceNumber} {
+                padding-top: $space;
+            }
+            &-pb-#{$spaceNumber} {
+                padding-bottom: $space;
+            }
+            &-m-#{$spaceNumber} {
+                margin: $space;
+            }
+            &-mx-#{$spaceNumber} {
+                margin-left: $space;
+                margin-right: $space;
+            }
+            &-my-#{$spaceNumber} {
+                margin-top: $space;
+                margin-bottom: $space;
+            }
+            &-ml-#{$spaceNumber} {
+                margin-left: $space;
+            }
+            &-mr-#{$spaceNumber} {
+                margin-right: $space;
+            }
+            &-mt-#{$spaceNumber} {
+                margin-top: $space;
+            }
+            &-mb-#{$spaceNumber} {
+                margin-bottom: $space;
+            }
+        }
+
+        &-m-auto {
+            margin: auto;
+        }
+        &-mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        &-my-auto {
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+        &-ml-auto {
+            margin-left: auto;
+        }
+        &-mr-auto {
+            margin-right: auto;
+        }
+        &-mt-auto {
+            margin-top: auto;
+        }
+        &-mb-auto {
+            margin-bottom: auto;
+        }
+    }
+}
+
+@mixin generateDisplay($breakpoint: false) {
+    @if $breakpoint != false {
+        @include min-width(getBreakpoint($breakpoint)) {
+            &-v-#{$breakpoint}-hidden {
+                visibility: hidden;
+            }
+            &-d-#{$breakpoint}-none {
+                display: none;
+            }
+            &-d-#{$breakpoint}-inline {
+                display: inline;
+            }
+            &-d-#{$breakpoint}-inline-block {
+                display: inline-block;
+            }
+            &-d-#{$breakpoint}-block {
+                display: block;
+            }
+            &-d-#{$breakpoint}-flex {
+                display: flex;
+            }
+            &-d-#{$breakpoint}-inline-flex {
+                display: inline-flex;
+            }
+        }
+    } @else {
+        &-hidden {
+            visibility: hidden;
+        }
+        &-d-none {
+            display: none;
+        }
+        &-d-inline {
+            display: inline;
+        }
+        &-d-inline-block {
+            display: inline-block;
+        }
+        &-d-block {
+            display: block;
+        }
+        &-d-flex {
+            display: flex;
+        }
+        &-d-inline-flex {
+            display: inline-flex;
+        }
+    }
+}
+
+@mixin generateAlign($breakpoint: false) {
+    @if $breakpoint != false {
+        @include min-width(getBreakpoint($breakpoint)) {
+            &-justify-#{$breakpoint}-start {
+                justify-content: flex-start;
+            }
+            &-justify-#{$breakpoint}-center {
+                justify-content: center;
+            }
+            &-justify-#{$breakpoint}-end {
+                justify-content: flex-end;
+            }
+            &-justify-#{$breakpoint}-around {
+                justify-content: space-around;
+            }
+            &-justify-#{$breakpoint}-evenly {
+                justify-content: space-evenly;
+            }
+            &-justify-#{$breakpoint}-between {
+                justify-content: space-between;
+            }
+
+            &-align-#{$breakpoint}-start {
+                align-items: flex-start;
+            }
+            &-align-#{$breakpoint}-center {
+                align-items: center;
+            }
+            &-align-#{$breakpoint}-end {
+                align-items: flex-end;
+            }
+            &-align-#{$breakpoint}-stretch {
+                align-items: stretch;
+            }
+        }
+    } @else {
+        &-justify-start {
+            justify-content: flex-start;
+        }
+        &-justify-center {
+            justify-content: center;
+        }
+        &-justify-end {
+            justify-content: flex-end;
+        }
+        &-justify-around {
+            justify-content: space-around;
+        }
+        &-justify-evenly {
+            justify-content: space-evenly;
+        }
+        &-justify-between {
+            justify-content: space-between;
+        }
+
+        &-align-start {
+            align-items: flex-start;
+        }
+        &-align-center {
+            align-items: center;
+        }
+        &-align-end {
+            align-items: flex-end;
+        }
+        &-align-stretch {
+            align-items: stretch;
+        }
+    }
+}

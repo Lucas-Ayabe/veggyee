@@ -1,0 +1,75 @@
+.nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100vh;
+    background: $light;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+    z-index: -99;
+    transition: all .3s ease-in-out;
+
+    &.is-active {
+        pointer-events: all;
+        opacity: 1;
+    }
+
+    @include min-width(getBreakpoint("md")) {
+        position: static;
+        pointer-events: all;
+        opacity: 1;
+        z-index: 2;
+        height: auto;
+        width: auto;
+        flex-direction: row;
+        background: transparent;
+    }
+
+    &.-left {
+        padding-left: 2rem;
+        @include min-width(getBreakpoint("md")) {
+            justify-content: flex-start;
+        }
+    }
+
+    &.-center {
+        justify-content: center;
+    }
+
+    &.-right {
+        justify-content: flex-end;
+    }
+
+    &__menu {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        @include min-width(getBreakpoint("md")) {
+            flex-direction: row;
+        }
+    }
+    &__item + &__item {
+        margin-top: 2.125rem;
+
+        @include min-width(getBreakpoint("md")) {
+            margin-top: 0;
+            margin-left: 2.125rem;
+        }
+    }
+
+    &__link {
+        color: $dark;
+        white-space: nowrap;
+        text-decoration: none;
+    }
+}

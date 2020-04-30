@@ -1,0 +1,15 @@
+// 
+// .u-d-display       sets a display in one of the CSS display values
+// .u-d-bp-display    sets a display in one of the CSS display values based in a one brakpoint.
+// .u-justify-align   sets a justify-content value
+// .u-align-align     sets a align-items value
+// 
+.u {
+    @include generateDisplay();
+    @include generateAlign();
+
+    @each $breakpointName, $breakpoint in $breakpoints {
+        @include generateDisplay($breakpointName);
+        @include generateAlign($breakpointName);
+    }
+}

@@ -1,0 +1,25 @@
+.search {
+    position: relative;
+    display: flex;
+    width: auto;
+
+    &__input {
+        border-radius: 100px;
+        border: 1px solid #eee;
+        max-width: 100%;
+        width: 100%;
+        font-size: 1rem;
+        padding: 5px 10px;
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        background: transparent;
+        border: none;
+        top: 50%;
+        right: $space-1;
+        transform: translateY(-50%);
+    } 
+}

@@ -1,0 +1,116 @@
+%button {
+    display: inline-flex;
+    font-family: $family;
+    font-size: $font-2;
+    align-items: center;
+    justify-content: center;
+    padding: $space-1 $space-2;
+    text-decoration: none;
+    text-align: center;
+    background: transparent;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+@each $name, $color in $colors {
+    %button--#{$name} {
+        background-color: $color;
+        color: getContrastYIQ($color);
+
+        &:hover {
+            background-color: lighten($color: $color, $amount: 5);
+        }
+
+        &:active {
+            background-color: lighten($color: $color, $amount: 10);
+        }
+    }
+}
+
+.button {
+    @extend %button;
+    @each $name, $color in $colors {
+        &.-#{$name} {
+            @extend %button--#{$name};
+        }
+    }
+
+    &.-rounded {
+        border-radius: $radius-1;
+    }
+
+    &.-full-rounded {
+        border-radius: 100px;
+    }
+
+    &.-link {
+        @each $name, $color in $colors {
+            &.-#{$name} {
+                background: transparent;
+                color: $color;
+            
+                &:hover {
+                    background: getRgba($color, .12);
+                }
+
+                &:active {
+                    background: getRgba($color, .2);
+                }
+            }
+        }
+    }
+
+    &.-ghost {
+        border: 1px solid currentColor;
+
+        @each $name, $color in $colors {
+            &.-#{$name}:not(:hover):not(:active) {
+                background: transparent;
+                color: $color;
+            }
+
+            &.-#{$name} {
+                &:hover {
+                    border-color: transparent;
+                }
+
+                &:active {
+                    border-color: transparent;
+                }
+            }
+        }
+    }
+
+    &.-raised {
+        box-shadow: $shadow-1;
+
+        &:hover {
+            box-shadow: $shadow-2;
+        }
+
+        &:active {
+            box-shadow: $shadow-3;
+        }
+
+        @each $name, $color in $colors {
+            &.-#{$name} {
+                box-shadow: 0 1px 2px rgba(50, 50, 50, .3), 0 2px 4px getRgba($color, .3);
+
+                &:hover {
+                    box-shadow: 0 2px 4px rgba(50, 50, 50, .3), 0 4px 8px getRgba($color, .3);
+                }
+
+                &:active {
+                    box-shadow: 0 4px 8px rgba(50, 50, 50, .3), 0 8px 16px getRgba($color, .3);
+                }
+            }
+        }
+    }
+
+    &__icon + &__text {
+        margin-left: 5px;
+    }
+}

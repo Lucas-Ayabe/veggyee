@@ -1,0 +1,10 @@
+// 
+// Sets the box-shadow of an element based in the $shadows variable.
+// 
+.u {
+    @each $name, $shadow in $shadows {
+        &-#{$name} {
+            box-shadow: $shadow;
+        }
+    }
+}
