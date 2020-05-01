@@ -115,15 +115,15 @@
         display: flex;
 
         &.-dark-glass {
-            background: rgba(0, 0, 0, .5);
+            background: rgba(0, 0, 0, .7);
             color: #fff;
 
             &:hover {
-                background: rgba(0, 0, 0, .6);
+                background: rgba(0, 0, 0, .8);
             }
 
             &:active {
-                background: rgba(0, 0, 0, .7);
+                background: rgba(0, 0, 0, .9);
             }
         }
     }
