@@ -14,7 +14,10 @@
         border-radius: 20px;
         background: rgba(255, 255, 255, .3);
         backdrop-filter: blur(2px);
-        padding: 20px 40px;
+        padding: 10px 20px;
+        @include min-width(getBreakpoint('sm')) {
+            padding: 20px 40px;
+        }
     }
 
     &__meta-badges {
