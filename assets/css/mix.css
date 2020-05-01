@@ -2144,6 +2144,7 @@ button {
   justify-content: flex-end;
   align-items: center;
   padding: 45px;
+  padding-bottom: 60px;
 }
 
 .product__header {
