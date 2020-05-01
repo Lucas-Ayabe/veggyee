@@ -55,7 +55,8 @@
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae odio vero,
                                         porro
                                         qui perspiciatis fugit!</p>
-                                    <a href="#" class="button -secondary -full-rounded">View details</a>
+                                    <button data-modal="#modal" class="button -secondary -full-rounded">View
+                                        details</button>
                                 </div>
                             </div>
                         </div>
@@ -67,7 +68,8 @@
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae odio vero,
                                         porro
                                         qui perspiciatis fugit!</p>
-                                    <a href="#" class="button -secondary -full-rounded">View details</a>
+                                    <button data-modal="#modal" class="button -secondary -full-rounded">View
+                                        details</button>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +81,8 @@
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae odio vero,
                                         porro
                                         qui perspiciatis fugit!</p>
-                                    <a href="#" class="button -secondary -full-rounded">View details</a>
+                                    <button data-modal="#modal" class="button -secondary -full-rounded">View
+                                        details</button>
                                 </div>
                             </div>
                         </div>
@@ -145,6 +148,60 @@
         </footer>
     </main>
 
+    <article id="modal" class="modal is-active">
+        <div class="modal__content product -overlay" style="background-image: url('./assets/images/product-01.jpg');">
+            <button data-close="#modal" class="modal__close">X</button>
+            <div class="product__info u-text-lightest">
+                <div class="container">
+                    <header class="product__header">
+                        <h2 class="title">Food</h2>
+                        <button class="icon"><img src="./assets/images/icons/favorite.svg" alt=""></button>
+                    </header>
+
+                    <div>
+                        <div class="rate">
+                            <button class="rate__value"><img src="./assets/images/icons/star.svg" alt=""></button>
+                            <button class="rate__value"><img src="./assets/images/icons/star.svg" alt=""></button>
+                            <button class="rate__value"><img src="./assets/images/icons/star.svg" alt=""></button>
+                            <button class="rate__value"><img src="./assets/images/icons/star.svg" alt=""></button>
+                            <button class="rate__value"><img src="./assets/images/icons/star.svg" alt=""></button>
+                            <small>870 people rate</small>
+                        </div>
+                    </div>
+
+                    <div>
+                        <span class="badge">pies</span>
+                        <span class="badge">tomatoes</span>
+                        <span class="badge">light food</span>
+                        <span class="badge">bakery</span>
+                    </div>
+
+                    <div class="rate">
+                        <p>Difficulty: </p>
+
+                        <button class="rate__value"><img src="./assets/images/icons/leaf.svg" alt=""></button>
+                        <button class="rate__value"><img src="./assets/images/icons/leaf.svg" alt=""></button>
+                        <button class="rate__value"><img src="./assets/images/icons/leaf.svg" alt=""></button>
+                        <button class="rate__value"><img src="./assets/images/icons/leaf.svg" alt=""></button>
+                        <button class="rate__value"><img src="./assets/images/icons/leaf.svg" alt=""></button>
+                    </div>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio illo iusto accusamus nobis,
+                        dolorem laborum sed deserunt? Corporis quidem et, veniam rem adipisci, inventore neque, maiores
+                        iusto accusamus beatae laborum?</p>
+                    
+                    <div class="product__meta-badges">
+                        <span class="badge -rounded -large">30 mins</span>
+                        <span class="badge -rounded -large">180 g°</span>
+                        <span class="badge -rounded -large">Oven</span>
+                    </div>
+
+                    <button class="button -dark-glass -rounded -block">Add to favorite</button>
+                </div>
+            </div>
+        </div>
+    </article>
+
     <script src="./assets/js/flickity.pkgd.min.js"></script>
     <script>
         const burger = document.querySelector('.burger');
@@ -163,6 +220,20 @@
             link.addEventListener('click', function (event) {
                 toggleMenu.call(burger);
             });
+        });
+        const modal = document.querySelector(".modal");
+        const openers = document.querySelectorAll('[data-modal]');
+        const close = modal.querySelector('[data-close]');
+
+        openers.forEach(open => {
+            open.addEventListener('click', e => {
+                const modal = document.querySelector(open.dataset.modal);
+                modal.classList.add('is-active');
+            });
+        });
+
+        close.addEventListener('click', e => {
+            modal.classList.remove('is-active');
         });
     </script>
 </body>

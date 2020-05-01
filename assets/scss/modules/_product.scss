@@ -1,0 +1,32 @@
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 45px;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__info {
+        border-radius: 20px;
+        background: rgba(255, 255, 255, .3);
+        backdrop-filter: blur(2px);
+        padding: 10px;
+    }
+
+    &__meta-badges {
+        display: flex;
+        justify-content: space-between;
+
+        @include min-width(getBreakpoint('sm')) {
+            justify-content: flex-start;
+            
+            & .badge + .badge {
+                margin-left: 1rem;
+            }
+        }
+    }
+}

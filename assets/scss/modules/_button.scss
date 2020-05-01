@@ -110,6 +110,24 @@
         }
     }
 
+    &.-block {
+        width: 100%;
+        display: flex;
+
+        &.-dark-glass {
+            background: rgba(0, 0, 0, .5);
+            color: #fff;
+
+            &:hover {
+                background: rgba(0, 0, 0, .6);
+            }
+
+            &:active {
+                background: rgba(0, 0, 0, .7);
+            }
+        }
+    }
+
     &__icon + &__text {
         margin-left: 5px;
     }
